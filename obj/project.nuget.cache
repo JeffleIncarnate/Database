@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OgytfagNqcmcujRYfbLXj248ziP01Eu1mleMN/V+8SO0DgMq9jkTQVVtNWU3x3RJBe6lCISk3xD6L8KSNQDd5w==",
+  "success": true,
+  "projectFilePath": "/home/dhruv/Documents/Code Files/C#/Database/Database.csproj",
+  "expectedPackageFiles": [
+    "/home/dhruv/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

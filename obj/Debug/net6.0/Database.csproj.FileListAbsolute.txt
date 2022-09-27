@@ -1,0 +1,15 @@
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/Database
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/Database.deps.json
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/Database.runtimeconfig.json
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/Database.dll
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/ref/Database.dll
+/home/dhruv/Documents/Code Files/C#/Database/bin/Debug/net6.0/Database.pdb
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.csproj.AssemblyReference.cache
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.GeneratedMSBuildEditorConfig.editorconfig
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.AssemblyInfoInputs.cache
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.AssemblyInfo.cs
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.csproj.CoreCompileInputs.cache
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.dll
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/ref/Database.dll
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.pdb
+/home/dhruv/Documents/Code Files/C#/Database/obj/Debug/net6.0/Database.genruntimeconfig.cache
