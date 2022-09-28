@@ -2,6 +2,7 @@
 using Database;
 using System.Linq;
 using System.Collections.Generic;
+using Database.src;
 
 namespace Database
 {
@@ -9,7 +10,7 @@ namespace Database
     {
         static void Main(string[] args)
         {
-            Database.src.User u1 = new Database.src.User();
+            User u1 = new User();
             string[] values = { "dRayat", "Dhruv", "Rayat", "dhruv@gmail.com", "Dhruv123", "GOD" };
             var dhruv = u1.createObject(1, values);
 
@@ -19,6 +20,8 @@ namespace Database
 
             foreach (KeyValuePair<string, string> pair in list)
                 Console.WriteLine("{0}, ", pair.Value);
+
+            dhruv.Insert(dhruv.ReturnAllData());
         }
     }
 }

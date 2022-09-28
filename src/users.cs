@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Database.src
 {
-    internal class User
+    internal class User : IUser
     {
         public int userID { get; set; } = 0;
         public string userName { get; set; } = "";
@@ -14,6 +14,8 @@ namespace Database.src
         public string email { get; set; } = "";
         public string password { get; set; } = "";
         public string role { get; set; } = "BASIC";
+
+        private string filePath { get; set; } = @"/home/dhruv/Documents/Code Files/C#/Database/data.csdb";
 
         public User createObject(int uuid, string[] args)
         {
@@ -67,6 +69,51 @@ namespace Database.src
             };
 
             return values;
+        }
+
+        public void Delete()
+        {
+
+        }
+
+        public void Insert(Dictionary<string, string> values)
+        {
+
+            List<KeyValuePair<string, string>> list = values.ToList();
+            var last = values.Values.Last();
+
+            int count = -1;
+
+            using (TextWriter tsw = new StreamWriter(filePath, true))
+            {
+                foreach (KeyValuePair<string, string> pair in list)
+                {
+                    count++;
+                    if (pair.Value == last)
+                    {
+                        tsw.Write("{0}", last);
+                    }
+                    else
+                    {
+                        if (count == 0)
+                        {
+                            tsw.WriteLine("");
+                            tsw.Write("{0} | ", pair.Value);
+                        }
+                        else tsw.Write("{0} | ", pair.Value);
+                    }
+                }
+            }
+        }
+
+        public void Select()
+        {
+
+        }
+
+        public void Update()
+        {
+
         }
     }
 }
