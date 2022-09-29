@@ -15,23 +15,28 @@ namespace Database
             User u1 = new User();
             
             // Create a user with values
-            string[] values = { "dRayat", "Dhruv", "Rayat", "dhruv@gmail.com", "Dhruv123", "GOD" };
-            var user = u1.createObject(1, values); // Create the object
+            string[] values = { "xNarayan", "Xavier", "Narayan", "xavier@gmail.com", "Xavier123", "ADMIN" };
+            var user = u1.createObject(3, values); // Create the object
             Dictionary<string, string> vals = new Dictionary<string, string>(user.ReturnAllData()); // Get the value returned in a dictionary
             
             // INSERT
-            // dhruv.Insert(siddhesh.ReturnAllData());
+            // user.Insert(user.ReturnAllData());
             
             // DELETE
             // string rowToDelete = "Dhruv";
-            // dhruv.Delete(name);
+            // user.Delete(name);
             
             // SELECT
-            // foreach (string item in user.Select(""))
+            // foreach (string item in user.Select("dRayat"))
             //     Console.Write(item + " ");
             
             // Update
             // user.Update("", "");
+        }
+
+        static void MethodPicker()
+        {
+            
         }
     }
 }
