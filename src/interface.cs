@@ -6,9 +6,9 @@ namespace Database.src
 {
     internal interface IUser
     {
-        public void Delete();
+        public void Delete(string itemToDelete);
         public void Insert(Dictionary<string, string> values);
-        public void Select();
+        public string[] Select(string rowToGet);
         public void Update();
     }
 }

@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace Database.src
@@ -71,9 +73,32 @@ namespace Database.src
             return values;
         }
 
-        public void Delete()
+        public void Delete(string itemToDelete)
         {
+            string[] text = File.ReadAllLines(filePath).Skip(1).ToArray();
+            List<string[]> records = new List<string[]>();
+            string[] tempConvertList = { };
+            int count = 1;
+            
+            for (int i = 0; i < text.Length; i++)
+            {
+                tempConvertList = text[i].Split(" | ");
+                records.Add(tempConvertList);
+            }
 
+            foreach (string[] items in records)
+            {
+                foreach (string item in items)
+                {
+                    if (item == itemToDelete)
+                    {
+                        var file = new List<string>(File.ReadAllLines(filePath));
+                        file.RemoveAt(count);
+                        File.WriteAllLines(filePath, file.ToArray());
+                    }
+                }
+                ++count;
+            }
         }
 
         public void Insert(Dictionary<string, string> values)
@@ -88,7 +113,7 @@ namespace Database.src
             {
                 foreach (KeyValuePair<string, string> pair in list)
                 {
-                    count++;
+                    ++count;
                     if (pair.Value == last)
                     {
                         tsw.Write("{0}", last);
@@ -106,9 +131,29 @@ namespace Database.src
             }
         }
 
-        public void Select()
+        public string[] Select(string rowToGet)
         {
+            string[] text = File.ReadAllLines(filePath).Skip(1).ToArray();
+            List<string[]> records = new List<string[]>();
+            string[] tempConvertList = { };
 
+            for (int i = 0; i < text.Length; i++)
+            {
+                tempConvertList = text[i].Split(" | ");
+                records.Add(tempConvertList);
+            }
+
+            foreach (string[] items in records)
+            {
+                foreach (string item in items)
+                {
+                    if (item == rowToGet)
+                    {
+                        return items;
+                    }
+                }
+            }
+            return new string[]{"Could not find item"};
         }
 
         public void Update()
