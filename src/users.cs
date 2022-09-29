@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
 
 namespace Database.src
 {
@@ -38,7 +39,7 @@ namespace Database.src
 
                 return u1;
             }
-            catch (System.IndexOutOfRangeException ex)
+            catch (IndexOutOfRangeException ex)
             {
                 Console.WriteLine("Get better at coding you suck.");
                 Console.WriteLine("{0}", ex);
@@ -156,9 +157,43 @@ namespace Database.src
             return new string[]{"Could not find item"};
         }
 
-        public void Update()
+        public void Update(string itemTopdate, string updateItemTo)
         {
+            string[] text = File.ReadAllLines(filePath);
+            List<string[]> records = new List<string[]>();
+            List<string[]> newRecords = new List<string[]>();
+            string[] tempConvertList = { };
 
+            for (int i = 0; i < text.Length; i++)
+            {
+                tempConvertList = text[i].Split(" | ");
+                records.Add(tempConvertList);
+            }
+
+            foreach (string[] items in records)
+            {
+                if (items.Contains(itemTopdate))
+                {
+                    int index = Array.IndexOf(items, itemTopdate);
+                    items[index] = updateItemTo;
+                    break;
+                }
+            }
+
+            string result = "";
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.Write(String.Empty);
+            }
+            
+            foreach (string[] items in records)
+            {
+                result = string.Join(" | ", items);
+                using (TextWriter tsw = new StreamWriter(filePath, true))
+                {
+                    tsw.WriteLine(result);
+                }
+            }
         }
     }
 }

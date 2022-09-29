@@ -9,6 +9,6 @@ namespace Database.src
         public void Delete(string itemToDelete);
         public void Insert(Dictionary<string, string> values);
         public string[] Select(string rowToGet);
-        public void Update();
+        public void Update(string itemTopdate, string updateItemTo);
     }
 }
