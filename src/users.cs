@@ -36,7 +36,6 @@ namespace Database.src
                     password = args[4],
                     role = args[5]
                 };
-
                 return u1;
             }
             catch (IndexOutOfRangeException ex)
@@ -161,7 +160,6 @@ namespace Database.src
         {
             string[] text = File.ReadAllLines(filePath);
             List<string[]> records = new List<string[]>();
-            List<string[]> newRecords = new List<string[]>();
             string[] tempConvertList = { };
 
             for (int i = 0; i < text.Length; i++)
